@@ -150,10 +150,10 @@ func isEmptyObject(objectString string) bool {
 //A readable message string from responseTimeNotification
 func getMessageFromResponseTimeNotification(responseTimeNotification ResponseTimeNotification) string {
 
-	message := fmt.Sprintf("Notification From StatusOk\n\nOne of your apis response time is below than expected."+
-		"\n\nPlease find the Details below"+
-		"\n\nUrl: %v \nRequestType: %v \nCurrent Average Response Time: %v ms\nExpected Response Time: %v ms\n"+
-		"\n\nThanks", responseTimeNotification.Url, responseTimeNotification.RequestType, responseTimeNotification.MeanResponseTime, responseTimeNotification.ExpectedResponsetime)
+	message := fmt.Sprintf("Notification From StatusOk\r\n\r\nOne of your apis response time is higher than expected."+
+		"\r\n\r\nPlease find the details below"+
+		"\r\n\r\nUrl: %v \r\nRequestType: %v \r\nCurrent Average Response Time: %v ms\r\nExpected Response Time: %v ms\r\n"+
+		"\r\n\r\nThanks", responseTimeNotification.Url, responseTimeNotification.RequestType, responseTimeNotification.MeanResponseTime, responseTimeNotification.ExpectedResponsetime)
 
 	return message
 }
@@ -161,10 +161,10 @@ func getMessageFromResponseTimeNotification(responseTimeNotification ResponseTim
 //A readable message string from errorNotification
 func getMessageFromErrorNotification(errorNotification ErrorNotification) string {
 
-	message := fmt.Sprintf("Notification From StatusOk\n\nWe are getting error when we try to send request to one of your apis"+
-		"\n\nPlease find the Details below"+
-		"\n\nUrl: %v \nRequestType: %v \nError Message: %v \nResponse Body: %v\nOther Info:%v\n"+
-		"\n\nThanks", errorNotification.Url, errorNotification.RequestType, errorNotification.Error, errorNotification.ResponseBody, errorNotification.OtherInfo)
+	message := fmt.Sprintf("Notification From StatusOk\r\n\r\nWe are getting error when we try to send request to one of your apis"+
+		"\r\n\r\nPlease find the details below"+
+		"\r\n\r\nUrl: %v \r\nRequestType: %v \r\nError Message: %v \r\nResponse Body: %v\r\nOther Info:%v\r\n"+
+		"\r\n\r\nThanks", errorNotification.Url, errorNotification.RequestType, errorNotification.Error, errorNotification.ResponseBody, errorNotification.OtherInfo)
 
 	return message
 }
