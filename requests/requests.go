@@ -93,7 +93,7 @@ func RequestsInit(data []RequestConfig, concurrency int) {
 	requestChannel = make(chan RequestConfig, len(data))
 
 	if len(data) == 0 {
-		println("\nNo requests to monitor.Please add requests to you config file")
+		println("\nNo requests to monitor. Please add requests to you config file")
 		os.Exit(3)
 	}
 	//send requests to make sure every every request is valid
@@ -108,7 +108,7 @@ func RequestsInit(data []RequestConfig, concurrency int) {
 
 		if reqErr != nil {
 			//Request Failed
-			println("\nFailed !!!! Not able to perfome below request")
+			println("\nFailed !!!! Not able to perform below request")
 			println("\n----Request Deatails---")
 			println("Url :", requestConfig.Url)
 			println("Type :", requestConfig.RequestType)
@@ -364,5 +364,5 @@ func GetJsonParamsBody(params map[string]string) (io.Reader, error) {
 
 //creates an error when response code from server is not equal to response code mentioned in config file
 func errResposeCode(status int, expectedStatus int) error {
-	return errors.New(fmt.Sprintf("Got Response code %v .Expeceted Response Code %v ", status, expectedStatus))
+	return errors.New(fmt.Sprintf("Got Response code %v .Expected Response Code %v ", status, expectedStatus))
 }
